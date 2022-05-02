@@ -38,4 +38,18 @@ describe('Locators', () => {
     // Using commands
     cy.getByTestId('btn-id-1');
   });
+
+  it('locating elements with contains', () => {
+    // Get element by text
+    cy.contains('Unique Text');
+
+    // Get element by text
+    cy.contains('Not Unique Text');
+
+    // With Selector
+    cy.contains("[type='submit']", 'Not Unique Text');
+    cy.contains('form', 'Not Unique Text');
+
+    cy.get("[type='submit']").contains('Not Unique Text');
+  });
 });
